@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.ArithmeticException
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,6 +57,27 @@ class MainActivity : AppCompatActivity() {
             inputTextView?.append(".")
             lastNumeric = false
             lastDot = true
+        }
+    }
+
+    fun onOperation(view: View){
+        if(lastNumeric){
+            var operation = inputTextView?.text.toString()
+
+
+            try{
+                var operands = operation.split("-")
+
+                var operand1 = operands[0]
+                var operand2 = operands[1]
+
+                var result = (operand1.toDouble() - operand2.toDouble())
+
+                inputTextView?.text =  result.toString()
+
+            }catch(e: ArithmeticException){
+                e.printStackTrace()
+            }
         }
     }
 }

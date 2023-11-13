@@ -271,7 +271,7 @@
             android:layout_weight="1"
             android:backgroundTint="#2196F3"
             android:layout_width="0dp"
-            android:onClick="onOperator"
+            android:onClick="onOperation"
             android:layout_height="match_parent"/>
 
     </LinearLayout>
