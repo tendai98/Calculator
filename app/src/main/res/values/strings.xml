@@ -16,4 +16,5 @@
     <string name="zero">0</string>
     <string name="SUB">-</string>
     <string name="eq">=</string>
+    <string name="pt">.</string>
 </resources>

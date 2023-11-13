@@ -3,6 +3,7 @@ package com.tendai.calculator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
@@ -19,10 +20,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onDigit(view: View){
-        inputTextView?.append("1")
+        val btn = (view as Button)
+        inputTextView?.append(btn.text)
     }
 
     fun onClear(view: View){
-
+        inputTextView?.text = ""
     }
 }
