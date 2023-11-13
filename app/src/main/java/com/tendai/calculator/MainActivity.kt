@@ -73,50 +73,48 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if(operation.contains("-")) {
-                    var operands = operation.split("-")
+                    val operands = operation.split("-")
 
                     var operand1 = operands[0]
-                    var operand2 = operands[1]
+                    val operand2 = operands[1]
 
                     if(prefix.isNotEmpty()){
                         operand1 = prefix + operand1
                     }
 
-                    var result = (operand1.toDouble() - operand2.toDouble())
+                    val result = (operand1.toDouble() - operand2.toDouble())
 
                     inputTextView?.text = result.toString()
                 }else if(operation.contains("+")) {
-                    var operands = operation.split("+")
+                    val operands = operation.split("+")
 
                     var operand1 = operands[0]
-                    var operand2 = operands[1]
+                    val operand2 = operands[1]
 
                     if(prefix.isNotEmpty()){
                         operand1 = prefix + operand1
                     }
 
-                    var result = (operand1.toDouble() + operand2.toDouble())
+                    val result = (operand1.toDouble() + operand2.toDouble())
 
                     inputTextView?.text = result.toString()
                 }else if(operation.contains("*")) {
-                    var operands = operation.split("*")
+                    val operands = operation.split("*")
 
-                    var operand1 = operands[0]
-                    var operand2 = operands[1]
+                    val operand1 = operands[0]
+                    val operand2 = operands[1]
 
-
-
-                    var result = (operand1.toDouble() * operand2.toDouble())
+                    val result = (operand1.toDouble() * operand2.toDouble())
 
                     inputTextView?.text = result.toString()
                 }else if(operation.contains("/")) {
-                    var operands = operation.split("/")
+                    val operands = operation.split("/")
 
-                    var operand1 = operands[0]
-                    var operand2 = operands[1]
+                    val operand1 = operands[0]
+                    val operand2 = operands[1]
 
-                    
-                    var result = (operand1.toDouble() / operand2.toDouble())
+
+                    val result = (operand1.toDouble() / operand2.toDouble())
 
                     inputTextView?.text = result.toString()
                 }
