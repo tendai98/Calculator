@@ -85,7 +85,42 @@ class MainActivity : AppCompatActivity() {
                     var result = (operand1.toDouble() - operand2.toDouble())
 
                     inputTextView?.text = result.toString()
+                }else if(operation.contains("+")) {
+                    var operands = operation.split("+")
+
+                    var operand1 = operands[0]
+                    var operand2 = operands[1]
+
+                    if(prefix.isNotEmpty()){
+                        operand1 = prefix + operand1
+                    }
+
+                    var result = (operand1.toDouble() + operand2.toDouble())
+
+                    inputTextView?.text = result.toString()
+                }else if(operation.contains("*")) {
+                    var operands = operation.split("*")
+
+                    var operand1 = operands[0]
+                    var operand2 = operands[1]
+
+
+
+                    var result = (operand1.toDouble() * operand2.toDouble())
+
+                    inputTextView?.text = result.toString()
+                }else if(operation.contains("/")) {
+                    var operands = operation.split("/")
+
+                    var operand1 = operands[0]
+                    var operand2 = operands[1]
+
+                    
+                    var result = (operand1.toDouble() / operand2.toDouble())
+
+                    inputTextView?.text = result.toString()
                 }
+
             }catch(e: ArithmeticException){
                 e.printStackTrace()
             }
