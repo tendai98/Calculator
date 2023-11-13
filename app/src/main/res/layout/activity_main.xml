@@ -67,6 +67,7 @@
 
         <Button
             android:text="@string/div"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_margin="2dp"
@@ -124,6 +125,7 @@
 
         <Button
             android:text="@string/mul"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_margin="2dp"
@@ -181,6 +183,7 @@
 
         <Button
             android:text="@string/add"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_margin="2dp"
@@ -239,6 +242,7 @@
 
         <Button
             android:text="@string/SUB"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_margin="2dp"
@@ -258,11 +262,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-
-
         <Button
             android:text="@string/eq"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_margin="2dp"
