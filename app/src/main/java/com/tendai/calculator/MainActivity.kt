@@ -60,6 +60,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun removeZeroAfterDot(result: String): String{
+        if(result.contains(".0")){
+            return result.replace(".0","")
+        }
+
+        return result
+    }
+
     fun onOperation(view: View){
         if(lastNumeric){
             var operation = inputTextView?.text.toString()
@@ -84,7 +92,8 @@ class MainActivity : AppCompatActivity() {
 
                     val result = (operand1.toDouble() - operand2.toDouble())
 
-                    inputTextView?.text = result.toString()
+                    inputTextView?.text = removeZeroAfterDot(result.toString())
+
                 }else if(operation.contains("+")) {
                     val operands = operation.split("+")
 
@@ -97,7 +106,8 @@ class MainActivity : AppCompatActivity() {
 
                     val result = (operand1.toDouble() + operand2.toDouble())
 
-                    inputTextView?.text = result.toString()
+                    inputTextView?.text = removeZeroAfterDot(result.toString())
+
                 }else if(operation.contains("*")) {
                     val operands = operation.split("*")
 
@@ -106,7 +116,8 @@ class MainActivity : AppCompatActivity() {
 
                     val result = (operand1.toDouble() * operand2.toDouble())
 
-                    inputTextView?.text = result.toString()
+                    inputTextView?.text = removeZeroAfterDot(result.toString())
+
                 }else if(operation.contains("/")) {
                     val operands = operation.split("/")
 
@@ -116,7 +127,7 @@ class MainActivity : AppCompatActivity() {
 
                     val result = (operand1.toDouble() / operand2.toDouble())
 
-                    inputTextView?.text = result.toString()
+                    inputTextView?.text = removeZeroAfterDot(result.toString())
                 }
 
             }catch(e: ArithmeticException){
