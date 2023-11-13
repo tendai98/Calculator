@@ -10,6 +10,8 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     private var inputTextView: TextView? = null
+    var lastNumeric : Boolean = false
+    var lastDot : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +24,19 @@ class MainActivity : AppCompatActivity() {
     fun onDigit(view: View){
         val btn = (view as Button)
         inputTextView?.append(btn.text)
+        lastNumeric = true
+        lastDot = false 
     }
 
     fun onClear(view: View){
         inputTextView?.text = ""
+    }
+
+    fun onDecimalPoint(view: View){
+        if(lastNumeric && !lastDot){
+            inputTextView?.append(".")
+            lastNumeric = false
+            lastDot = true
+        }
     }
 }
