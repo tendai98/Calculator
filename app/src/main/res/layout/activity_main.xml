@@ -9,13 +9,14 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text_view_input"
         android:background="#E1E1E1"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:text="@string/_0"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:gravity="end|bottom"
         android:layout_height="250dp"/>
 
@@ -190,7 +191,7 @@
             android:layout_weight="1"
             android:backgroundTint="#A3A3A3"
             android:layout_width="0dp"
-            android:onClick="onDigit"
+            android:onClick="onClear"
             android:layout_height="match_parent"/>
 
     </LinearLayout>
