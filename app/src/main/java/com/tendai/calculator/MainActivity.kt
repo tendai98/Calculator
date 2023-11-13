@@ -11,18 +11,33 @@ class MainActivity : AppCompatActivity() {
 
     private var inputTextView: TextView? = null
     var lastNumeric : Boolean = false
-    var lastDot : Boolean = false
+    private var lastDot : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         inputTextView = findViewById(R.id.text_view_input)
-
     }
-    
-    fun onOperator(view: View){
 
+    fun onOperator(view: View){
+        inputTextView?.text?.let{
+            if(lastNumeric && !isOperatorAdded(it.toString())){
+                inputTextView?.append((view as Button).text)
+                lastNumeric = false
+                lastDot = false
+            }
+        }
+    }
+
+    private fun isOperatorAdded(value: String) : Boolean{
+        return if(value.startsWith("-")){
+            false
+        }else{
+            value.contains("/")
+            || value.contains("*")
+            || value.contains("+")
+            || value.contains("-")
+        }
     }
 
     fun onDigit(view: View){
