@@ -63,9 +63,15 @@ class MainActivity : AppCompatActivity() {
     fun onOperation(view: View){
         if(lastNumeric){
             var operation = inputTextView?.text.toString()
+            var prefix = ""
 
 
             try{
+                if(operation.startsWith("-")){
+                    prefix = "-"
+                    operation = operation.substring(1)
+                }
+
                 var operands = operation.split("-")
 
                 var operand1 = operands[0]
