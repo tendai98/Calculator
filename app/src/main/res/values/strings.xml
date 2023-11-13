@@ -17,4 +17,5 @@
     <string name="SUB">-</string>
     <string name="eq">=</string>
     <string name="pt">.</string>
+    <string name="clr">CLR</string>
 </resources>
