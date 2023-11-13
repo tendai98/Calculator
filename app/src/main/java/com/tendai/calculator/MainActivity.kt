@@ -20,12 +20,16 @@ class MainActivity : AppCompatActivity() {
         inputTextView = findViewById(R.id.text_view_input)
 
     }
+    
+    fun onOperator(view: View){
+
+    }
 
     fun onDigit(view: View){
         val btn = (view as Button)
         inputTextView?.append(btn.text)
         lastNumeric = true
-        lastDot = false 
+        lastDot = false
     }
 
     fun onClear(view: View){
