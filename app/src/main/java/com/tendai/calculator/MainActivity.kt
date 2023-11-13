@@ -72,15 +72,20 @@ class MainActivity : AppCompatActivity() {
                     operation = operation.substring(1)
                 }
 
-                var operands = operation.split("-")
+                if(operation.contains("-")) {
+                    var operands = operation.split("-")
 
-                var operand1 = operands[0]
-                var operand2 = operands[1]
+                    var operand1 = operands[0]
+                    var operand2 = operands[1]
 
-                var result = (operand1.toDouble() - operand2.toDouble())
+                    if(prefix.isNotEmpty()){
+                        operand1 = prefix + operand1
+                    }
 
-                inputTextView?.text =  result.toString()
+                    var result = (operand1.toDouble() - operand2.toDouble())
 
+                    inputTextView?.text = result.toString()
+                }
             }catch(e: ArithmeticException){
                 e.printStackTrace()
             }
